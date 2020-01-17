@@ -1,6 +1,7 @@
 package validpalindrome;
 
 public class CheckIfValidPalindromeFunction {
+	// two pointers methods, O(n) solution
 	public boolean isPalindrome(String s) {
 		// If its empty, it is automatically a valid palindrome
 		if(s.isEmpty()){
@@ -14,7 +15,7 @@ public class CheckIfValidPalindromeFunction {
 		char cHead, cTail;
 		
 		// Only stop the loop when it gets to the middle means we compare them all
-		while(head <= tail){
+		while(head < tail){
 			cHead = s.charAt(head);
 			cTail = s.charAt(tail);
 			
@@ -24,7 +25,7 @@ public class CheckIfValidPalindromeFunction {
 			} else if (!Character.isLetterOrDigit(cTail)){
 				tail--;
 			} else {
-				// If they do not match, it is not a valid palindrome right away
+				// The front and end have to match, return false if it is not a valid palindrome right away
 				if(Character.toLowerCase(cHead) != Character.toLowerCase(cTail)){
 					return false;
 				}
