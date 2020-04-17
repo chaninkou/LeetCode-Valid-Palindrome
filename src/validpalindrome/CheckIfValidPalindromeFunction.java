@@ -14,18 +14,17 @@ public class CheckIfValidPalindromeFunction {
 		
 		char cHead, cTail;
 		
-		// Only stop the loop when it gets to the middle means we compare them all
 		while(head < tail){
 			cHead = s.charAt(head);
 			cTail = s.charAt(tail);
 			
-			// isLetterOrDigit is to ignore the non letter or digit by going to the next element
+			// isLetterOrDigit is to ignore the non letter or digit
 			if(!Character.isLetterOrDigit(cHead)){
 				head++;
 			} else if (!Character.isLetterOrDigit(cTail)){
 				tail--;
 			} else {
-				// The front and end have to match, return false if it is not a valid palindrome right away
+				// The front and end have to match even if A == a
 				if(Character.toLowerCase(cHead) != Character.toLowerCase(cTail)){
 					return false;
 				}
@@ -41,16 +40,15 @@ public class CheckIfValidPalindromeFunction {
 	}
 
 	// Cool solution with regular expression
-	// public boolean isPalindrome(String s) {
-	// // Replace all the character that is not letter or numbers and make it
-	// lowercase
-	// String actual = s.replaceAll("[^A-Za-z0-9]", "").toLowerCase();
+	public boolean isPalindrome2(String s) {
+		// ^ will make sure everything that is not A-Za-z0-9
+		String actual = s.replaceAll("[^A-Za-z0-9]", "").toLowerCase();
 
-	// // Using reverse() function in StringBuffer to reverse a string
-	// String reversed = new StringBuffer(actual).reverse().toString();
+		// Using reverse() function in StringBuffer to reverse a string
+		String reversed = new StringBuffer(actual).reverse().toString();
 
-	// // If the actual string is equal to the reverse, than it is valid
-	// palindrome
-	// return actual.equals(reversed);
-	// }
+		// // If the actual string is equal to the reverse, than it is valid
+		// palindrome
+		return actual.equals(reversed);
+	}
 }
