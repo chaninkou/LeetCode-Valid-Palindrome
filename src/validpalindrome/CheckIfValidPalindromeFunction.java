@@ -8,7 +8,6 @@ public class CheckIfValidPalindromeFunction {
 			return true;
 		}
 		
-		// Starts from 0 and last element to move in the middle
 		int head = 0;
 		int tail = s.length() - 1;
 		
@@ -35,7 +34,7 @@ public class CheckIfValidPalindromeFunction {
 			}
 		}
 		
-		// If it gets here, that means its a valid palindrome
+		// valid palindrome
 		return true;
 	}
 
