@@ -1,4 +1,4 @@
-package validpalindrome;
+package leetcode125;
 
 public class CheckIfValidPalindromeFunction {
 	// two pointers methods, O(n) solution

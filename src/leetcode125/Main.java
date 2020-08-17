@@ -1,4 +1,4 @@
-package validpalindrome;
+package leetcode125;
 
 public class Main {
 	public static void main(String[] args) {
